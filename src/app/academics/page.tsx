@@ -2,7 +2,8 @@
 
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { FaGraduationCap, FaBook, FaChalkboardTeacher, FaTrophy, FaUniversity, FaFlask, FaMusic, FaPalette } from 'react-icons/fa';
+import Image from 'next/image';
+import { FaGraduationCap, FaBook, FaChalkboardTeacher, FaTrophy, FaUniversity, FaFlask, FaPalette } from 'react-icons/fa';
 
 const AcademicsPage = () => {
   return (
@@ -153,14 +154,12 @@ const AcademicsPage = () => {
             <div className="lg:w-1/2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-indigo-900/20 rounded-xl transform rotate-3"></div>
-                <img 
-                  src="/images/classroom.jpg" 
+                <Image 
+                  src="https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80"
                   alt="Students in classroom" 
+                  width={1170}
+                  height={780}
                   className="relative rounded-lg shadow-xl w-full h-auto object-cover"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.src = "https://images.unsplash.com/photo-1577896851231-70ef18881754?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80";
-                  }}
                 />
               </div>
             </div>
