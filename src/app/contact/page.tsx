@@ -144,7 +144,7 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Office Hours</h3>
-                <p className="text-gray-800 mb-4">When we're available</p>
+                <p className="text-gray-800 mb-4">When we&apos;re available</p>
                 <p className="text-gray-800">
                   Monday - Friday<br />
                   8:00 AM - 4:00 PM
@@ -256,7 +256,7 @@ const ContactPage = () => {
                 viewport={{ once: true }}
                 className="flex flex-col justify-center"
               >
-                <h3 className="text-3xl font-bold text-gray-800 mb-6">We're Here to Help</h3>
+                <h3 className="text-3xl font-bold text-gray-800 mb-6">We&apos;re Here to Help</h3>
                 <p className="text-gray-800 mb-8 leading-relaxed">
                   Whether you have a question about admissions, academics, or anything else, our team is ready to answer all your questions.
                 </p>
