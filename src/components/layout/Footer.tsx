@@ -6,16 +6,12 @@ import {
   FaFacebookF, 
   FaTwitter, 
   FaInstagram, 
-  FaLinkedinIn, 
   FaYoutube, 
   FaPhone, 
   FaEnvelope, 
   FaMapMarkerAlt,
   FaGraduationCap,
   FaBook,
-  FaCalendarAlt,
-  FaUsers,
-  FaImages,
   FaChevronRight,
   FaArrowUp
 } from 'react-icons/fa';

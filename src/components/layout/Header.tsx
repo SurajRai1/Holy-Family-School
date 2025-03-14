@@ -305,19 +305,19 @@ const Header = () => {
                 ))}
                 
                 {/* Mobile Secondary Nav Categories */}
-                {secondaryNavCategories.map((category, catIndex) => (
+                {secondaryNavCategories.map((category) => (
                   <div key={category.category} className="mt-2 first:mt-0">
                     <div className="px-4 py-2 text-xs font-semibold text-gray-500 uppercase tracking-wider bg-gray-50">
                       {category.category}
                     </div>
-                    {category.links.slice(0, 2).map((link, linkIndex) => (
+                    {category.links.slice(0, 2).map((link) => (
                       <motion.div
                         key={link.name}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ 
                           duration: 0.3, 
-                          delay: primaryNavLinks.length * 0.05 + (catIndex * 2 + linkIndex) * 0.05 
+                          delay: primaryNavLinks.length * 0.05 + 0.05 
                         }}
                       >
                         <Link
@@ -388,7 +388,7 @@ const Header = () => {
                 </div>
                 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-                  {secondaryNavCategories.map((category, catIndex) => (
+                  {secondaryNavCategories.map((category) => (
                     <motion.div 
                       key={category.category}
                       variants={fullMenuVariants}
@@ -401,7 +401,7 @@ const Header = () => {
                         {category.category}
                       </h3>
                       <div className="space-y-1">
-                        {category.links.map((link, linkIndex) => (
+                        {category.links.map((link) => (
                           <motion.div
                             key={link.name}
                             variants={itemVariants}

@@ -1,82 +1,123 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
+import { FaUserGraduate, FaChalkboardTeacher, FaTrophy, FaBook } from 'react-icons/fa';
 
 const Stats = () => {
-  const stats = [
-    { value: 95, label: 'College Acceptance Rate', suffix: '%' },
-    { value: 25, label: 'Students per Class', suffix: '' },
-    { value: 50, label: 'Extracurricular Activities', suffix: '+' },
-    { value: 30, label: 'Years of Excellence', suffix: '+' },
-  ];
+  const [animatedStats, setAnimatedStats] = useState([0, 0, 0, 0]);
+  const [hasAnimated, setHasAnimated] = useState(false);
 
-  const [counters, setCounters] = useState(stats.map(() => 0));
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.2,
-  });
+  // Wrap stats in useMemo to prevent re-creation on each render
+  const stats = useMemo(() => [
+    {
+      icon: <FaUserGraduate className="text-4xl text-indigo-600" />,
+      value: 1200,
+      label: "Students Enrolled",
+      suffix: "+"
+    },
+    {
+      icon: <FaChalkboardTeacher className="text-4xl text-indigo-600" />,
+      value: 85,
+      label: "Expert Faculty",
+      suffix: "+"
+    },
+    {
+      icon: <FaTrophy className="text-4xl text-indigo-600" />,
+      value: 95,
+      label: "Academic Achievement",
+      suffix: "%"
+    },
+    {
+      icon: <FaBook className="text-4xl text-indigo-600" />,
+      value: 50,
+      label: "Years of Excellence",
+      suffix: "+"
+    }
+  ], []);
 
   useEffect(() => {
-    if (inView) {
-      const intervals = stats.map((stat, index) => {
-        return setInterval(() => {
-          setCounters(prevCounters => {
-            const newCounters = [...prevCounters];
-            if (newCounters[index] < stat.value) {
-              newCounters[index] = Math.min(
-                newCounters[index] + Math.ceil(stat.value / 30),
-                stat.value
-              );
-            }
-            return newCounters;
-          });
-        }, 50);
-      });
+    const isInViewport = (element) => {
+      if (!element) return false;
+      const rect = element.getBoundingClientRect();
+      return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+      );
+    };
 
-      return () => {
-        intervals.forEach(interval => clearInterval(interval));
-      };
-    }
-  }, [inView, stats]);
+    const handleScroll = () => {
+      const statsSection = document.getElementById('stats-section');
+      if (isInViewport(statsSection) && !hasAnimated) {
+        animateStats();
+        setHasAnimated(true);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check on initial load
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [hasAnimated, stats]);
+
+  const animateStats = () => {
+    const duration = 2000; // 2 seconds
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    
+    let frame = 0;
+    const timer = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const updatedStats = stats.map(stat => 
+        Math.floor(progress * stat.value)
+      );
+      
+      setAnimatedStats(updatedStats);
+      
+      if (frame === totalFrames) {
+        clearInterval(timer);
+        setAnimatedStats(stats.map(stat => stat.value));
+      }
+    }, frameDuration);
+  };
 
   return (
-    <section className="py-20 bg-blue-600 text-white">
+    <section id="stats-section" className="py-16 bg-indigo-900 text-white">
       <div className="container mx-auto px-4">
-        <motion.div
+        <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Our Impact in Numbers
-          </h2>
-          <div className="w-24 h-1 bg-white mx-auto mb-6"></div>
-          <p className="max-w-2xl mx-auto text-lg text-blue-100">
-            Holy Family Higher Secondary School has a proven track record of academic excellence and student success.
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Our School at a Glance</h2>
+          <div className="w-24 h-1 bg-indigo-500 mx-auto mb-6"></div>
+          <p className="max-w-2xl mx-auto text-lg text-indigo-100">
+            Holy Family Higher Secondary School has a proud history of academic excellence and student achievement.
           </p>
         </motion.div>
 
-        <div 
-          ref={ref}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
-        >
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, scale: 0.8 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/10 backdrop-blur-sm rounded-lg p-8 text-center hover:bg-white/20 transition-colors duration-300"
+              className="bg-indigo-800/50 backdrop-blur-sm rounded-lg p-8 text-center"
             >
-              <div className="text-4xl md:text-5xl font-bold text-white mb-2">
-                {counters[index]}{stat.suffix}
+              <div className="flex justify-center mb-4">
+                {stat.icon}
               </div>
-              <div className="text-blue-100">{stat.label}</div>
+              <div className="text-4xl md:text-5xl font-bold mb-2">
+                {animatedStats[index]}{stat.suffix}
+              </div>
+              <div className="text-indigo-200">{stat.label}</div>
             </motion.div>
           ))}
         </div>

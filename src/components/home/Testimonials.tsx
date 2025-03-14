@@ -1,52 +1,47 @@
 "use client";
 
-import { useRef, useEffect } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import { FaQuoteLeft } from 'react-icons/fa';
 
-// Import Swiper styles in the layout or page component
-// import 'swiper/css';
-// import 'swiper/css/navigation';
-// import 'swiper/css/pagination';
-
 const Testimonials = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const testimonials = [
     {
-      quote: "Holy Family Higher Secondary School has been transformative for my daughter. The teachers are exceptional and truly care about each student's success.",
-      name: "Sarah Johnson",
-      role: "Parent",
-      image: "/images/testimonials/parent1.jpg"
+      quote: "Holy Family Higher Secondary School provided my children with an exceptional education that prepared them well for college and beyond. The teachers truly care about each student.",
+      name: "Priya Sharma",
+      role: "Parent of Alumni",
+      image: "/images/testimonial-1.jpg"
     },
     {
-      quote: "The academic rigor and supportive environment at Holy Family prepared me exceptionally well for college. I'm grateful for my time there.",
-      name: "Michael Chen",
-      role: "Alumni, Class of 2022",
-      image: "/images/testimonials/student1.jpg"
+      quote: "As a former student, I can say that the values and education I received at Holy Family have shaped my career and personal growth in profound ways.",
+      name: "Rahul Patel",
+      role: "Alumni, Class of 2015",
+      image: "/images/testimonial-2.jpg"
     },
     {
-      quote: "As a teacher, I'm proud to be part of an institution that values innovation and puts students first in everything we do.",
-      name: "Dr. Emily Rodriguez",
-      role: "Science Faculty",
-      image: "/images/testimonials/teacher1.jpg"
-    },
-    {
-      quote: "The extracurricular programs at Holy Family Higher Secondary School helped me discover my passion for robotics and set me on my career path.",
-      name: "David Williams",
-      role: "Alumni, Class of 2020",
-      image: "/images/testimonials/student2.jpg"
-    },
-    {
-      quote: "We've hired several Holy Family graduates at our company. They consistently demonstrate exceptional critical thinking and leadership skills.",
-      name: "Jennifer Lee",
-      role: "Local Business Owner",
-      image: "/images/testimonials/community1.jpg"
+      quote: "The supportive environment and academic rigor at Holy Family Higher Secondary School helped my daughter develop confidence and a love for learning.",
+      name: "Anita Desai",
+      role: "Current Parent",
+      image: "/images/testimonial-3.jpg"
     }
   ];
 
+  const handlePrev = () => {
+    setActiveIndex((prevIndex) => 
+      prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1
+    );
+  };
+
+  const handleNext = () => {
+    setActiveIndex((prevIndex) => 
+      prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1
+    );
+  };
+
   return (
-    <section className="py-20 bg-gray-100">
+    <section className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -56,64 +51,90 @@ const Testimonials = () => {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
-            Community Testimonials
+            What Our Community Says
           </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto mb-6"></div>
+          <div className="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
           <p className="max-w-2xl mx-auto text-lg text-gray-600">
-            Read what students, parents, alumni, and faculty say about their experiences at Holy Family Higher Secondary School.
+            Hear from our students, parents, and alumni about their experiences at Holy Family Higher Secondary School
           </p>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <Swiper
-            modules={[Navigation, Pagination, Autoplay]}
-            spaceBetween={30}
-            slidesPerView={1}
-            navigation
-            pagination={{ clickable: true }}
-            autoplay={{ delay: 5000, disableOnInteraction: false }}
-            breakpoints={{
-              640: {
-                slidesPerView: 1,
-              },
-              768: {
-                slidesPerView: 2,
-              },
-              1024: {
-                slidesPerView: 3,
-              },
-            }}
-            className="testimonials-swiper"
-          >
+        <div className="max-w-4xl mx-auto">
+          <div className="relative">
             {testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <div className="bg-white rounded-lg shadow-lg p-8 h-full flex flex-col">
-                  <div className="mb-6 text-blue-600">
-                    <FaQuoteLeft className="text-3xl" />
+              <motion.div
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ 
+                  opacity: index === activeIndex ? 1 : 0,
+                  x: index === activeIndex ? 0 : (index < activeIndex ? -100 : 100)
+                }}
+                transition={{ duration: 0.5 }}
+                className="bg-white rounded-xl p-8 md:p-10 shadow-lg"
+                style={{ 
+                  position: index === activeIndex ? 'relative' : 'absolute',
+                  top: 0,
+                  left: 0,
+                  width: '100%',
+                  display: index === activeIndex ? 'block' : 'none'
+                }}
+              >
+                <FaQuoteLeft className="text-4xl text-indigo-200 mb-6" />
+                <p className="text-xl md:text-2xl text-gray-700 mb-8 italic">
+                  &ldquo;{testimonial.quote}&rdquo;
+                </p>
+                <div className="flex items-center">
+                  <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center mr-4">
+                    {/* Replace with actual image if available */}
+                    <span className="text-indigo-600 font-bold text-lg">
+                      {testimonial.name.charAt(0)}
+                    </span>
                   </div>
-                  <p className="text-gray-700 mb-6 flex-grow">"{testimonial.quote}"</p>
-                  <div className="flex items-center">
-                    <div className="w-12 h-12 rounded-full bg-gray-300 mr-4 overflow-hidden">
-                      {/* Replace with actual images when available */}
-                      <div className="w-full h-full bg-blue-600 flex items-center justify-center text-white font-bold">
-                        {testimonial.name.charAt(0)}
-                      </div>
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
-                      <p className="text-gray-600 text-sm">{testimonial.role}</p>
-                    </div>
+                  <div>
+                    <h4 className="font-bold text-gray-800">{testimonial.name}</h4>
+                    <p className="text-gray-600">{testimonial.role}</p>
                   </div>
                 </div>
-              </SwiperSlide>
+              </motion.div>
             ))}
-          </Swiper>
-        </motion.div>
+
+            {/* Navigation buttons */}
+            <div className="flex justify-between mt-8">
+              <button 
+                onClick={handlePrev}
+                className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-indigo-600 hover:bg-indigo-50 transition-colors duration-300"
+                aria-label="Previous testimonial"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                </svg>
+              </button>
+              <button 
+                onClick={handleNext}
+                className="w-12 h-12 rounded-full bg-white shadow-md flex items-center justify-center text-indigo-600 hover:bg-indigo-50 transition-colors duration-300"
+                aria-label="Next testimonial"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
+            </div>
+
+            {/* Indicators */}
+            <div className="flex justify-center mt-6">
+              {testimonials.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`w-3 h-3 rounded-full mx-1 ${
+                    index === activeIndex ? 'bg-indigo-600' : 'bg-gray-300'
+                  }`}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

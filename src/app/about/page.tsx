@@ -3,7 +3,6 @@
 import { motion } from 'framer-motion';
 import MainLayout from '@/components/layout/MainLayout';
 import { FaGraduationCap, FaBook, FaUsers, FaHandshake, FaAward, FaHistory, FaLandmark, FaStar } from 'react-icons/fa';
-import Image from 'next/image';
 
 export default function AboutPage() {
   return (
@@ -69,7 +68,7 @@ export default function AboutPage() {
               </div>
               <div className="w-20 h-1 bg-indigo-600 mb-6"></div>
               <p className="text-lg text-gray-700 mb-6">
-                Founded in 1965, Holy Family Higher Secondary School began with a vision to provide quality education rooted in values and excellence. What started as a small institution with just three classrooms and 50 students has grown into one of the region's most respected educational establishments.
+                Founded in 1965, Holy Family Higher Secondary School began with a vision to provide quality education rooted in values and excellence. What started as a small institution with just three classrooms and 50 students has grown into one of the region&apos;s most respected educational establishments.
               </p>
               <p className="text-lg text-gray-700 mb-6">
                 Through decades of dedication to academic excellence and character formation, we have nurtured generations of students who have gone on to make significant contributions in various fields across the globe.
@@ -104,7 +103,7 @@ export default function AboutPage() {
                 At Holy Family Higher Secondary School, our mission is to provide a holistic education that nurtures intellectual growth, moral values, and spiritual development in a supportive and inclusive environment.
               </p>
               <p className="text-lg text-gray-700">
-                We are committed to empowering students with knowledge, skills, and character that prepare them not just for academic success, but for life's diverse challenges and opportunities.
+                We are committed to empowering students with knowledge, skills, and character that prepare them not just for academic success, but for life&apos;s diverse challenges and opportunities.
               </p>
             </motion.div>
             
@@ -148,7 +147,7 @@ export default function AboutPage() {
             </h2>
             <div className="w-24 h-1 bg-indigo-600 mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-700">
-              From our humble beginnings to our present achievements, explore the key moments that have shaped our institution's legacy.
+              From our humble beginnings to our present achievements, explore the key moments that have shaped our institution&apos;s legacy.
             </p>
           </motion.div>
 
