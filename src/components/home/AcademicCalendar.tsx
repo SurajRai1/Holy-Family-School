@@ -143,7 +143,7 @@ const AcademicCalendar = () => {
     { day: 2, isCurrentMonth: false, hasEvent: false },
   ];
 
-  const getEventTypeColor = (eventType: string) => {
+  const getEventTypeColor = (eventType: string | undefined) => {
     switch(eventType) {
       case 'academic': return 'bg-blue-500';
       case 'event': return 'bg-green-500';
