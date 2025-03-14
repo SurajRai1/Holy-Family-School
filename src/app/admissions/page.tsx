@@ -2,7 +2,7 @@
 
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { FaClipboardList, FaCalendarAlt, FaFileAlt, FaQuestionCircle } from 'react-icons/fa';
+import { FaCalendarAlt } from 'react-icons/fa';
 
 const AdmissionsPage = () => {
   return (
