@@ -26,7 +26,7 @@ const ContactPage = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Contact Us</h1>
             <div className="w-24 h-1 bg-white mx-auto mb-8"></div>
             <p className="text-xl text-white mb-10 leading-relaxed">
-              We'd love to hear from you. Reach out to us with any questions, feedback, or inquiries about Holy Family Higher Secondary School.
+              We&apos;d love to hear from you. Reach out to us with any questions, feedback, or inquiries about Holy Family Higher Secondary School.
             </p>
           </motion.div>
         </div>
@@ -47,7 +47,7 @@ const ContactPage = () => {
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
             <p className="max-w-2xl mx-auto text-lg text-gray-800">
-              We're here to help and answer any questions you might have. We look forward to hearing from you.
+              We&apos;re here to help and answer any questions you might have. We look forward to hearing from you.
             </p>
           </motion.div>
 
@@ -301,7 +301,7 @@ const ContactPage = () => {
                 
                 <div className="mt-10 p-6 bg-indigo-50 rounded-xl border border-indigo-100">
                   <p className="text-indigo-900 font-medium">
-                    Prefer to talk in person? Schedule a campus visit and we'll be happy to show you around and answer all your questions.
+                    Prefer to talk in person? Schedule a campus visit and we&apos;ll be happy to show you around and answer all your questions.
                   </p>
                 </div>
               </motion.div>
@@ -469,7 +469,7 @@ const ContactPage = () => {
               Ready to Connect With Us?
             </h2>
             <p className="text-xl text-white mb-10 max-w-3xl mx-auto">
-              We're excited to hear from you and answer any questions you may have about Holy Family Higher Secondary School.
+              We&apos;re excited to hear from you and answer any questions you may have about Holy Family Higher Secondary School.
             </p>
             
             <motion.div
