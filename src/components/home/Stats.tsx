@@ -60,7 +60,7 @@ const Stats = () => {
     handleScroll(); // Check on initial load
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasAnimated, stats]);
+  }, [hasAnimated, stats, animateStats]);
 
   const animateStats = () => {
     const duration = 2000; // 2 seconds

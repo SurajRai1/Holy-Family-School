@@ -73,7 +73,7 @@ const AcademicCalendar = () => {
     }
   ];
 
-  const getTypeColor = (type) => {
+  const getTypeColor = (type: string) => {
     switch(type) {
       case 'academic': return 'bg-blue-100 text-blue-800 border-blue-200';
       case 'event': return 'bg-green-100 text-green-800 border-green-200';
@@ -85,7 +85,7 @@ const AcademicCalendar = () => {
     }
   };
 
-  const getPriorityBorder = (priority) => {
+  const getPriorityBorder = (priority: string) => {
     switch(priority) {
       case 'high': return 'border-l-4 border-red-500';
       case 'medium': return 'border-l-4 border-yellow-500';
@@ -94,7 +94,7 @@ const AcademicCalendar = () => {
     }
   };
 
-  const getTypeIcon = (type) => {
+  const getTypeIcon = (type: string) => {
     switch(type) {
       case 'announcement': return <FaBullhorn className="text-purple-600" />;
       case 'important': return <FaInfoCircle className="text-yellow-600" />;
@@ -143,7 +143,7 @@ const AcademicCalendar = () => {
     { day: 2, isCurrentMonth: false, hasEvent: false },
   ];
 
-  const getEventTypeColor = (eventType) => {
+  const getEventTypeColor = (eventType: string) => {
     switch(eventType) {
       case 'academic': return 'bg-blue-500';
       case 'event': return 'bg-green-500';
