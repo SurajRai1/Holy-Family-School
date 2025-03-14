@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, RefObject } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -24,7 +24,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const menuRef = useRef(null);
+  const menuRef: RefObject<HTMLDivElement> = useRef(null);
 
   // Handle scroll events - simplified to only detect if scrolled
   useEffect(() => {
