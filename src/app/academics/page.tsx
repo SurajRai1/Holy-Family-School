@@ -1,12 +1,8 @@
+"use client";
+
 import React from 'react';
 import MainLayout from '@/components/layout/MainLayout';
-import { Metadata } from 'next';
 import { FaGraduationCap, FaBook, FaChalkboardTeacher, FaTrophy, FaUniversity, FaFlask, FaMusic, FaPalette } from 'react-icons/fa';
-
-export const metadata: Metadata = {
-  title: 'Academics | Holy Family Higher Secondary School',
-  description: 'Explore our academic programs, curriculum, faculty, and student achievements at Holy Family Higher Secondary School.',
-};
 
 const AcademicsPage = () => {
   return (
