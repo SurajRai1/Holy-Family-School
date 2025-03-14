@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import { FaUserGraduate, FaChalkboardTeacher, FaTrophy, FaBook } from 'react-icons/fa';
 
@@ -36,6 +36,28 @@ const Stats = () => {
     }
   ], []);
 
+  const animateStats = useCallback(() => {
+    const duration = 2000; // 2 seconds
+    const frameDuration = 1000 / 60; // 60fps
+    const totalFrames = Math.round(duration / frameDuration);
+    
+    let frame = 0;
+    const timer = setInterval(() => {
+      frame++;
+      const progress = frame / totalFrames;
+      const updatedStats = stats.map(stat => 
+        Math.floor(progress * stat.value)
+      );
+      
+      setAnimatedStats(updatedStats);
+      
+      if (frame === totalFrames) {
+        clearInterval(timer);
+        setAnimatedStats(stats.map(stat => stat.value));
+      }
+    }, frameDuration);
+  }, [stats]);
+
   useEffect(() => {
     const isInViewport = (element) => {
       if (!element) return false;
@@ -60,29 +82,7 @@ const Stats = () => {
     handleScroll(); // Check on initial load
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [hasAnimated, stats, animateStats]);
-
-  const animateStats = () => {
-    const duration = 2000; // 2 seconds
-    const frameDuration = 1000 / 60; // 60fps
-    const totalFrames = Math.round(duration / frameDuration);
-    
-    let frame = 0;
-    const timer = setInterval(() => {
-      frame++;
-      const progress = frame / totalFrames;
-      const updatedStats = stats.map(stat => 
-        Math.floor(progress * stat.value)
-      );
-      
-      setAnimatedStats(updatedStats);
-      
-      if (frame === totalFrames) {
-        clearInterval(timer);
-        setAnimatedStats(stats.map(stat => stat.value));
-      }
-    }, frameDuration);
-  };
+  }, [hasAnimated, animateStats]);
 
   return (
     <section id="stats-section" className="py-16 bg-indigo-900 text-white">
