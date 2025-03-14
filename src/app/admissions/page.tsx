@@ -55,7 +55,7 @@ const AdmissionsPage = () => {
               Admission Process
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            <p className="max-w-2xl mx-auto text-lg text-gray-800">
               Follow these simple steps to apply for admission to Holy Family Higher Secondary School.
             </p>
           </motion.div>
@@ -77,7 +77,7 @@ const AdmissionsPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">1. Submit Application Form</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-800 mb-4 leading-relaxed">
                     Complete the application form with all required information and submit it along with the necessary documents. Applications can be submitted online or in person at our admissions office.
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -101,7 +101,7 @@ const AdmissionsPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">2. Entrance Assessment</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-800 mb-4 leading-relaxed">
                     Students will be evaluated through an entrance test to assess their academic readiness for the appropriate grade level. The test is designed to evaluate critical thinking and problem-solving skills.
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -125,7 +125,7 @@ const AdmissionsPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">3. Interview</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-800 mb-4 leading-relaxed">
                     Selected candidates and their parents will be invited for an interview with school administrators. This helps us understand the student&apos;s interests, aspirations, and ensures the school is a good fit for their educational journey.
                   </p>
                 </div>
@@ -143,7 +143,7 @@ const AdmissionsPage = () => {
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">4. Admission Confirmation</h3>
-                  <p className="text-gray-600 mb-4 leading-relaxed">
+                  <p className="text-gray-800 mb-4 leading-relaxed">
                     Successful candidates will receive an admission offer. Complete the enrollment by paying the required fees and submitting any additional documents requested. Welcome to the Holy Family family!
                   </p>
                 </div>
@@ -167,7 +167,7 @@ const AdmissionsPage = () => {
               Important Dates
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            <p className="max-w-2xl mx-auto text-lg text-gray-800">
               Mark your calendar with these key dates for the admission process.
             </p>
           </motion.div>
@@ -189,15 +189,15 @@ const AdmissionsPage = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-                    <span className="font-semibold text-gray-700">Start Date:</span>
+                    <span className="font-semibold text-gray-800">Start Date:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">January 15, 2024</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-700">End Date:</span>
+                    <span className="font-semibold text-gray-800">End Date:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">March 31, 2024</span>
                   </div>
                 </div>
-                <div className="mt-6 text-gray-600">
+                <div className="mt-6 text-gray-800">
                   <p className="italic">Applications received after the deadline may be considered based on seat availability.</p>
                 </div>
               </motion.div>
@@ -217,15 +217,15 @@ const AdmissionsPage = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-gray-100 pb-3">
-                    <span className="font-semibold text-gray-700">First Round:</span>
+                    <span className="font-semibold text-gray-800">First Round:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">April 15, 2024</span>
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-700">Second Round:</span>
+                    <span className="font-semibold text-gray-800">Second Round:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">May 10, 2024</span>
                   </div>
                 </div>
-                <div className="mt-6 text-gray-600">
+                <div className="mt-6 text-gray-800">
                   <p className="italic">Test timings: 9:00 AM to 12:00 PM. Please arrive 30 minutes early.</p>
                 </div>
               </motion.div>
@@ -245,11 +245,11 @@ const AdmissionsPage = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-700">Period:</span>
+                    <span className="font-semibold text-gray-800">Period:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">April 20 - May 20, 2024</span>
                   </div>
                 </div>
-                <div className="mt-6 text-gray-600">
+                <div className="mt-6 text-gray-800">
                   <p className="italic">Interview schedules will be communicated via email to shortlisted candidates.</p>
                 </div>
               </motion.div>
@@ -269,11 +269,11 @@ const AdmissionsPage = () => {
                 </div>
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <span className="font-semibold text-gray-700">Date:</span>
+                    <span className="font-semibold text-gray-800">Date:</span>
                     <span className="bg-indigo-50 text-indigo-800 py-1 px-3 rounded-lg font-medium">June 1, 2024</span>
                   </div>
                 </div>
-                <div className="mt-6 text-gray-600">
+                <div className="mt-6 text-gray-800">
                   <p className="italic">Results will be published on the school website and communicated via email.</p>
                 </div>
               </motion.div>
@@ -286,7 +286,7 @@ const AdmissionsPage = () => {
               viewport={{ once: true }}
               className="mt-12 bg-indigo-50 p-6 rounded-xl border border-indigo-100 text-center"
             >
-              <p className="text-lg text-indigo-900 font-medium">
+              <p className="text-lg text-indigo-900 font-bold">
                 For any changes to these dates, please check our website or contact the admissions office.
               </p>
             </motion.div>
@@ -308,7 +308,7 @@ const AdmissionsPage = () => {
               Fee Structure
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            <p className="max-w-2xl mx-auto text-lg text-gray-800">
               Our transparent fee structure for the academic year 2024-2025.
             </p>
           </motion.div>
@@ -324,10 +324,10 @@ const AdmissionsPage = () => {
               <table className="w-full">
                 <thead>
                   <tr className="bg-indigo-900 text-white">
-                    <th className="py-4 px-6 text-left">Grade Level</th>
-                    <th className="py-4 px-6 text-left">Admission Fee</th>
-                    <th className="py-4 px-6 text-left">Tuition Fee (Annual)</th>
-                    <th className="py-4 px-6 text-left">Other Charges</th>
+                    <th className="py-4 px-6 text-left font-bold">Grade Level</th>
+                    <th className="py-4 px-6 text-left font-bold">Admission Fee</th>
+                    <th className="py-4 px-6 text-left font-bold">Tuition Fee (Annual)</th>
+                    <th className="py-4 px-6 text-left font-bold">Other Charges</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -338,10 +338,10 @@ const AdmissionsPage = () => {
                     viewport={{ once: true }}
                     className="border-b border-gray-200 hover:bg-indigo-50 transition-colors"
                   >
-                    <td className="py-4 px-6 font-medium">Nursery - KG</td>
-                    <td className="py-4 px-6">₹15,000</td>
-                    <td className="py-4 px-6">₹45,000</td>
-                    <td className="py-4 px-6">₹8,000</td>
+                    <td className="py-4 px-6 font-medium text-gray-800">Nursery - KG</td>
+                    <td className="py-4 px-6 text-gray-800">₹15,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹45,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹8,000</td>
                   </motion.tr>
                   <motion.tr 
                     initial={{ opacity: 0, x: -20 }}
@@ -350,10 +350,10 @@ const AdmissionsPage = () => {
                     viewport={{ once: true }}
                     className="border-b border-gray-200 hover:bg-indigo-50 transition-colors"
                   >
-                    <td className="py-4 px-6 font-medium">Grades 1-5</td>
-                    <td className="py-4 px-6">₹20,000</td>
-                    <td className="py-4 px-6">₹55,000</td>
-                    <td className="py-4 px-6">₹10,000</td>
+                    <td className="py-4 px-6 font-medium text-gray-800">Grades 1-5</td>
+                    <td className="py-4 px-6 text-gray-800">₹20,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹55,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹10,000</td>
                   </motion.tr>
                   <motion.tr 
                     initial={{ opacity: 0, x: -20 }}
@@ -362,10 +362,10 @@ const AdmissionsPage = () => {
                     viewport={{ once: true }}
                     className="border-b border-gray-200 hover:bg-indigo-50 transition-colors"
                   >
-                    <td className="py-4 px-6 font-medium">Grades 6-8</td>
-                    <td className="py-4 px-6">₹25,000</td>
-                    <td className="py-4 px-6">₹65,000</td>
-                    <td className="py-4 px-6">₹12,000</td>
+                    <td className="py-4 px-6 font-medium text-gray-800">Grades 6-8</td>
+                    <td className="py-4 px-6 text-gray-800">₹25,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹65,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹12,000</td>
                   </motion.tr>
                   <motion.tr 
                     initial={{ opacity: 0, x: -20 }}
@@ -374,10 +374,10 @@ const AdmissionsPage = () => {
                     viewport={{ once: true }}
                     className="border-b border-gray-200 hover:bg-indigo-50 transition-colors"
                   >
-                    <td className="py-4 px-6 font-medium">Grades 9-10</td>
-                    <td className="py-4 px-6">₹30,000</td>
-                    <td className="py-4 px-6">₹75,000</td>
-                    <td className="py-4 px-6">₹15,000</td>
+                    <td className="py-4 px-6 font-medium text-gray-800">Grades 9-10</td>
+                    <td className="py-4 px-6 text-gray-800">₹30,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹75,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹15,000</td>
                   </motion.tr>
                   <motion.tr 
                     initial={{ opacity: 0, x: -20 }}
@@ -386,10 +386,10 @@ const AdmissionsPage = () => {
                     viewport={{ once: true }}
                     className="hover:bg-indigo-50 transition-colors"
                   >
-                    <td className="py-4 px-6 font-medium">Grades 11-12</td>
-                    <td className="py-4 px-6">₹35,000</td>
-                    <td className="py-4 px-6">₹85,000</td>
-                    <td className="py-4 px-6">₹18,000</td>
+                    <td className="py-4 px-6 font-medium text-gray-800">Grades 11-12</td>
+                    <td className="py-4 px-6 text-gray-800">₹35,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹85,000</td>
+                    <td className="py-4 px-6 text-gray-800">₹18,000</td>
                   </motion.tr>
                 </tbody>
               </table>
@@ -405,7 +405,7 @@ const AdmissionsPage = () => {
           >
             <div className="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
               <h3 className="text-xl font-bold text-indigo-900 mb-4">Payment Schedule</h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-800">
                 <li className="flex items-start">
                   <span className="bg-indigo-100 text-indigo-800 rounded-full w-6 h-6 flex items-center justify-center mr-3 mt-0.5 flex-shrink-0">1</span>
                   <span>First Installment: At the time of admission (40%)</span>
@@ -423,7 +423,7 @@ const AdmissionsPage = () => {
 
             <div className="bg-indigo-50 p-6 rounded-xl border border-indigo-100">
               <h3 className="text-xl font-bold text-indigo-900 mb-4">Additional Information</h3>
-              <ul className="space-y-3 text-gray-700">
+              <ul className="space-y-3 text-gray-800">
                 <li className="flex items-start">
                   <div className="bg-indigo-100 p-1 rounded-full mr-3 mt-0.5 flex-shrink-0">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-indigo-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -468,7 +468,7 @@ const AdmissionsPage = () => {
               Contact Admissions Office
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-gray-600">
+            <p className="max-w-2xl mx-auto text-lg text-gray-800">
               Our admissions team is here to help you through every step of the process.
             </p>
           </motion.div>
@@ -494,8 +494,8 @@ const AdmissionsPage = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-1">Phone</h4>
-                        <p className="text-gray-600">+91 98765 43210</p>
-                        <p className="text-gray-600">+91 12345 67890</p>
+                        <p className="text-gray-800">+91 98765 43210</p>
+                        <p className="text-gray-800">+91 12345 67890</p>
                       </div>
                     </div>
                     
@@ -507,8 +507,8 @@ const AdmissionsPage = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-1">Email</h4>
-                        <p className="text-gray-600">admissions@holyfamily.edu</p>
-                        <p className="text-gray-600">info@holyfamily.edu</p>
+                        <p className="text-gray-800">admissions@holyfamily.edu</p>
+                        <p className="text-gray-800">info@holyfamily.edu</p>
                       </div>
                     </div>
                     
@@ -520,8 +520,8 @@ const AdmissionsPage = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-1">Office Hours</h4>
-                        <p className="text-gray-600">Monday to Friday: 8:00 AM - 4:00 PM</p>
-                        <p className="text-gray-600">Saturday: 9:00 AM - 1:00 PM</p>
+                        <p className="text-gray-800">Monday to Friday: 8:00 AM - 4:00 PM</p>
+                        <p className="text-gray-800">Saturday: 9:00 AM - 1:00 PM</p>
                       </div>
                     </div>
                     
@@ -534,9 +534,9 @@ const AdmissionsPage = () => {
                       </div>
                       <div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-1">Address</h4>
-                        <p className="text-gray-600">Holy Family Higher Secondary School</p>
-                        <p className="text-gray-600">123 Education Street, Knowledge City</p>
-                        <p className="text-gray-600">Kathmandu, Nepal - 44600</p>
+                        <p className="text-gray-800">Holy Family Higher Secondary School</p>
+                        <p className="text-gray-800">123 Education Street, Knowledge City</p>
+                        <p className="text-gray-800">Kathmandu, Nepal - 44600</p>
                       </div>
                     </div>
                   </div>
@@ -555,40 +555,40 @@ const AdmissionsPage = () => {
                   
                   <form className="space-y-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                      <label htmlFor="name" className="block text-sm font-medium text-gray-800 mb-1">Full Name</label>
                       <input
                         type="text"
                         id="name"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors bg-white text-gray-800"
                         placeholder="Your full name"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email Address</label>
+                      <label htmlFor="email" className="block text-sm font-medium text-gray-800 mb-1">Email Address</label>
                       <input
                         type="email"
                         id="email"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors bg-white text-gray-800"
                         placeholder="Your email address"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                      <label htmlFor="phone" className="block text-sm font-medium text-gray-800 mb-1">Phone Number</label>
                       <input
                         type="tel"
                         id="phone"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors bg-white text-gray-800"
                         placeholder="Your phone number"
                       />
                     </div>
                     
                     <div>
-                      <label htmlFor="grade" className="block text-sm font-medium text-gray-700 mb-1">Interested Grade</label>
+                      <label htmlFor="grade" className="block text-sm font-medium text-gray-800 mb-1">Interested Grade</label>
                       <select
                         id="grade"
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors bg-white text-gray-800"
                       >
                         <option value="">Select a grade</option>
                         <option value="nursery">Nursery - KG</option>
@@ -600,11 +600,11 @@ const AdmissionsPage = () => {
                     </div>
                     
                     <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                      <label htmlFor="message" className="block text-sm font-medium text-gray-800 mb-1">Message</label>
                       <textarea
                         id="message"
                         rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors"
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 transition-colors bg-white text-gray-800"
                         placeholder="Your message or inquiry"
                       ></textarea>
                     </div>
@@ -629,7 +629,7 @@ const AdmissionsPage = () => {
               viewport={{ once: true }}
               className="mt-16 bg-indigo-50 p-6 rounded-xl border border-indigo-100 text-center"
             >
-              <p className="text-lg text-indigo-900 font-medium">
+              <p className="text-lg text-indigo-900 font-bold">
                 Want to visit our campus? Schedule a tour by calling our admissions office or filling out the inquiry form.
               </p>
             </motion.div>
@@ -650,7 +650,7 @@ const AdmissionsPage = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Begin Your Educational Journey With Us
             </h2>
-            <p className="text-xl text-indigo-100 mb-10 max-w-3xl mx-auto">
+            <p className="text-xl text-white mb-10 max-w-3xl mx-auto">
               Take the first step towards a bright future for your child. Apply now or schedule a visit to our campus.
             </p>
             
