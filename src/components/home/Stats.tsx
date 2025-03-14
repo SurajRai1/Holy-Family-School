@@ -59,7 +59,7 @@ const Stats = () => {
   }, [stats]);
 
   useEffect(() => {
-    const isInViewport = (element) => {
+    const isInViewport = (element: HTMLElement | null) => {
       if (!element) return false;
       const rect = element.getBoundingClientRect();
       return (
