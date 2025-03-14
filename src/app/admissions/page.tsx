@@ -126,7 +126,7 @@ const AdmissionsPage = () => {
                 <div>
                   <h3 className="text-2xl font-bold text-gray-800 mb-3">3. Interview</h3>
                   <p className="text-gray-600 mb-4 leading-relaxed">
-                    Selected candidates and their parents will be invited for an interview with school administrators. This helps us understand the student's interests, aspirations, and ensures the school is a good fit for their educational journey.
+                    Selected candidates and their parents will be invited for an interview with school administrators. This helps us understand the student&apos;s interests, aspirations, and ensures the school is a good fit for their educational journey.
                   </p>
                 </div>
               </motion.div>
