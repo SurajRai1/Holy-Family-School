@@ -24,7 +24,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [fullMenuOpen, setFullMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
-  const menuRef: RefObject<HTMLDivElement> = useRef(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   // Handle scroll events - simplified to only detect if scrolled
   useEffect(() => {
