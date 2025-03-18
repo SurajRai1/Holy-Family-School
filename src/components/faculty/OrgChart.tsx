@@ -22,26 +22,10 @@ interface Hierarchy {
   [key: string]: Section;
 }
 
-interface SectionButtonProps {
-  section: Section;
-  isSelected: boolean;
-  onClick: () => void;
+interface GenderRatio {
+  female: number;
+  male: number;
 }
-
-const SectionButton: React.FC<SectionButtonProps> = ({ section, isSelected, onClick }) => (
-  <button
-    onClick={onClick}
-    className={`flex items-center space-x-4 p-4 rounded-lg transition-all duration-300 ${
-      isSelected ? 'bg-indigo-600 text-white' : 'bg-white hover:bg-indigo-50'
-    }`}
-  >
-    <section.icon className="w-6 h-6" />
-    <div className="text-left">
-      <h3 className="font-medium">{section.title}</h3>
-      <p className="text-sm opacity-80">{section.members.length} Members</p>
-    </div>
-  </button>
-);
 
 const OrgChart = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
@@ -235,7 +219,7 @@ const OrgChart = () => {
     }
   };
 
-  const calculateGenderRatio = (members: any[]) => {
+  const calculateGenderRatio = (members: Member[]): GenderRatio => {
     const total = members.length;
     const female = members.filter(m => m.gender === "female").length;
     const male = total - female;
