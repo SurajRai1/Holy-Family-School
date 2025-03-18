@@ -3,6 +3,24 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaUserTie, FaChalkboardTeacher, FaUserGraduate, FaUserFriends, FaUserCircle, FaTimes, FaUsers } from 'react-icons/fa';
+import Image from 'next/image';
+
+interface Member {
+  name: string;
+  position: string;
+  image: string;
+  gender: string;
+}
+
+interface Section {
+  title: string;
+  icon: React.ElementType;
+  members: Member[];
+}
+
+interface Hierarchy {
+  [key: string]: Section;
+}
 
 const OrgChart = () => {
   const [selectedSection, setSelectedSection] = useState<string | null>(null);
@@ -19,7 +37,7 @@ const OrgChart = () => {
     }
   }, [clickedMember]);
 
-  const hierarchy = {
+  const hierarchy: Hierarchy = {
     administrator: {
       title: "Administration",
       icon: FaUserTie,
@@ -310,9 +328,11 @@ const OrgChart = () => {
                           onClick={() => setClickedMember(index)}
                         >
                           <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-white shadow-lg mb-8">
-                            <img
+                            <Image
                               src={member.image}
                               alt={member.name}
+                              width={96}
+                              height={96}
                               className="w-full h-full object-cover"
                             />
                           </div>

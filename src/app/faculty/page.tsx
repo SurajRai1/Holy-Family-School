@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Image from 'next/image';
 import MainLayout from '@/components/layout/MainLayout';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaChalkboardTeacher, FaUserTie, FaUserGraduate } from 'react-icons/fa';
@@ -75,69 +76,102 @@ const categories = [
   { name: "Physical Education", icon: FaChalkboardTeacher, count: 3 }
 ];
 
+export const metadata = {
+  title: 'Faculty & Staff | Holy Family School',
+  description: 'Meet our dedicated faculty and staff members who are committed to providing quality education and nurturing young minds.',
+};
+
 const FacultyPage = () => {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative bg-indigo-900 text-white py-20">
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-900/90 to-indigo-900/70"></div>
-        <div className="absolute inset-0 bg-[url('/images/hero-bg.jpg')] bg-cover bg-center opacity-20"></div>
-        <div className="container mx-auto px-4 relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Faculty</h1>
-            <p className="text-xl text-indigo-100 max-w-2xl mx-auto">
-              Meet our dedicated team of educators who are committed to nurturing young minds and shaping future leaders.
+      <div className="relative h-[40vh] bg-gradient-to-r from-indigo-600 to-indigo-800">
+        <div className="absolute inset-0 bg-black/50" />
+        <div className="relative h-full flex items-center justify-center text-center px-4">
+          <div>
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Our Faculty & Staff
+            </h1>
+            <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto">
+              Meet the dedicated team of educators and staff members who make Holy Family School a place of excellence in education.
             </p>
-          </motion.div>
+          </div>
         </div>
-      </section>
+      </div>
 
       {/* Organization Chart */}
       <OrgChart />
 
       {/* Faculty Categories */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Faculty Categories</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Our faculty members are organized into specialized departments, each contributing to our comprehensive educational program.
-            </p>
-          </motion.div>
+      <div className="max-w-7xl mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {/* Arts Department */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src="/images/faculty/arts-department.jpg"
+                alt="Arts Department"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white">Arts Department</h3>
+                <p className="text-white/90 mt-2">Class 11-12 Arts</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-gray-600">
+                Our Arts department provides comprehensive education in humanities, social sciences, and fine arts.
+              </p>
+            </div>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {categories.map((category, index) => (
-              <motion.div
-                key={category.name}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.1 * index }}
-                className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
-              >
-                <div className="flex items-center space-x-4">
-                  <div className="p-3 bg-indigo-100 rounded-full">
-                    <category.icon className="w-6 h-6 text-indigo-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-900">{category.name}</h3>
-                    <p className="text-sm text-gray-600">{category.count} Faculty Members</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
+          {/* High School */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src="/images/faculty/high-school.jpg"
+                alt="High School"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white">High School</h3>
+                <p className="text-white/90 mt-2">Classes 9-10</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-gray-600">
+                High school education focusing on academic excellence and personal development.
+              </p>
+            </div>
+          </div>
+
+          {/* Primary School */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden">
+            <div className="relative h-48">
+              <Image
+                src="/images/faculty/primary-school.jpg"
+                alt="Primary School"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-6">
+                <h3 className="text-2xl font-bold text-white">Primary School</h3>
+                <p className="text-white/90 mt-2">Classes 1-5</p>
+              </div>
+            </div>
+            <div className="p-6">
+              <p className="text-gray-600">
+                Foundation years focusing on basic education and character building.
+              </p>
+            </div>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* Faculty Members */}
       <section className="py-16">
