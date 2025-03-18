@@ -335,7 +335,7 @@ const ContactPage = () => {
           >
             <div className="relative h-[500px] w-full">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2080248847697!2d85.31080021506156!3d27.710882982790663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb19c1b0033325%3A0x85bea5ef59dc5c99!2sKathmandu%2C%20Nepal!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3532.2080248847697!2d94.1058404!3d25.6568176!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x374621942745a783%3A0x5b92e6ce159c9c5c!2sHoly%20Family%20Higher%20Secondary%20School!5e0!3m2!1sen!2sus!4v1651234567890!5m2!1sen!2sus" 
                 className="absolute inset-0 w-full h-full border-0" 
                 allowFullScreen 
                 loading="lazy" 
