@@ -189,7 +189,7 @@ const FacultySpotlight = () => {
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Faculty Spotlight</h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-            Discover what makes our faculty special and how they contribute to our school's success.
+            Discover what makes our faculty special and how they contribute to our school&apos;s success.
           </p>
         </div>
 
@@ -227,7 +227,7 @@ const FacultySpotlight = () => {
               <h2 className="text-2xl sm:text-3xl font-bold">Building the Future <span className="text-indigo-600">Together</span></h2>
               <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
                 Our faculty members work collaboratively to create an innovative learning environment where every student can thrive. 
-                Through shared expertise and dedication, we're shaping the next generation of leaders.
+                Through shared expertise and dedication, we&apos;re shaping the next generation of leaders.
               </p>
               
               <div className="grid grid-cols-2 gap-4 sm:gap-8 pt-4">
