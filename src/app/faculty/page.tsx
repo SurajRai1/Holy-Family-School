@@ -5,6 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import { motion } from 'framer-motion';
 import { FaGraduationCap, FaChalkboardTeacher, FaUserTie, FaUserGraduate } from 'react-icons/fa';
 import OrgChart from '@/components/faculty/OrgChart';
+import FacultySpotlight from '@/components/faculty/FacultySpotlight';
 
 const FacultyPage = () => {
   return (
@@ -70,22 +71,8 @@ const FacultyPage = () => {
         </div>
       </div>
 
-      {/* Faculty Members */}
-      <section className="py-16">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-center mb-12"
-          >
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">Our Faculty Members</h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Meet our experienced and dedicated faculty members who are committed to providing quality education.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Faculty Spotlight and Mission */}
+      <FacultySpotlight />
     </MainLayout>
   );
 };
