@@ -91,7 +91,7 @@ const Header = () => {
     {
       category: "Community",
       links: [
-        { name: 'Faculty & Staff', path: '/staff', icon: <FaUsers /> },
+        { name: 'Faculty & Staff', path: '/faculty', icon: <FaUsers /> },
         { name: 'Alumni Network', path: '/alumni', icon: <FaGraduationCap /> },
         { name: 'Parent Portal', path: '/parents', icon: <FaUsers /> },
         { name: 'Student Life', path: '/student-life', icon: <FaUserGraduate /> },

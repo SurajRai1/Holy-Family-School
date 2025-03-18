@@ -231,7 +231,7 @@ const FacultyDirectory = () => {
         
         <div className="text-center mt-12">
           <a 
-            href="#" 
+            href="/faculty" 
             className="inline-flex items-center px-6 py-3 bg-indigo-900 text-white font-medium rounded-lg hover:bg-indigo-800 transition-colors duration-300"
           >
             View All Faculty
