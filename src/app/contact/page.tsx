@@ -120,12 +120,9 @@ const ContactPage = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-gray-800 mb-2">Address</h3>
-                <p className="text-gray-800 mb-4">Visit our campus</p>
                 <p className="text-gray-800">
-                  Holy Family Higher Secondary School<br />
-                  123 Education Street<br />
-                  Knowledge City, Kathmandu<br />
-                  Nepal - 44600
+                  AG Colony, Kohima<br />
+                  Nagaland, India
                 </p>
               </motion.div>
 
@@ -324,8 +321,8 @@ const ContactPage = () => {
               Find Us
             </h2>
             <div className="w-24 h-1 bg-indigo-900 mx-auto mb-6"></div>
-            <p className="max-w-2xl mx-auto text-lg text-gray-800">
-              Our campus is conveniently located in the heart of Knowledge City. Visit us today!
+            <p className="max-w-2xl mx-auto text-lg text-gray-800 mb-6">
+              Our campus is conveniently located in AG Colony, Kohima, Nagaland. Visit us today!
             </p>
           </motion.div>
 

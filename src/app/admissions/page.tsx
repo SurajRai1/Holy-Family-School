@@ -535,8 +535,7 @@ const AdmissionsPage = () => {
                       <div>
                         <h4 className="text-lg font-semibold text-gray-800 mb-1">Address</h4>
                         <p className="text-gray-800">Holy Family Higher Secondary School</p>
-                        <p className="text-gray-800">123 Education Street, Knowledge City</p>
-                        <p className="text-gray-800">Kathmandu, Nepal - 44600</p>
+                        <p className="text-gray-800">AG Colony, Kohima, Nagaland, India</p>
                       </div>
                     </div>
                   </div>
