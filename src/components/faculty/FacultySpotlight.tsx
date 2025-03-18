@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaTrophy, FaBook, FaChartLine, FaClock, FaChalkboardTeacher, FaUsers, FaGraduationCap } from 'react-icons/fa';
+import { FaTrophy, FaBook, FaChartLine, FaClock, FaChalkboardTeacher, FaUsers } from 'react-icons/fa';
 import Image from 'next/image';
 
 const FacultySpotlight = () => {
@@ -141,7 +141,7 @@ const FacultySpotlight = () => {
                 name: "Mr. James Wilson",
                 role: "Mathematics Teacher",
                 image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&h=150&fit=crop",
-                quote: "The dedication of our faculty team and the enthusiasm of our students make every day exciting. We're not just teaching subjects; we're shaping future leaders."
+                quote: "The dedication of our faculty team and the enthusiasm of our students make every day exciting. We&apos;re not just teaching subjects; we&apos;re shaping future leaders."
               },
               {
                 name: "Mrs. Emily Davis",
@@ -171,7 +171,7 @@ const FacultySpotlight = () => {
                     <p className="text-xs sm:text-sm text-indigo-600">{testimonial.role}</p>
                   </div>
                 </div>
-                <blockquote className="text-sm sm:text-base text-gray-600 italic">"{testimonial.quote}"</blockquote>
+                <blockquote className="text-sm sm:text-base text-gray-600 italic">&ldquo;{testimonial.quote}&rdquo;</blockquote>
               </motion.div>
             ))}
           </div>
