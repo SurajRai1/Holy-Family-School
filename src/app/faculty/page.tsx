@@ -5,6 +5,7 @@ import MainLayout from '@/components/layout/MainLayout';
 import { FaGraduationCap, FaUserTie, FaChalkboardTeacher, FaUserGraduate } from 'react-icons/fa';
 import OrgChart from '@/components/faculty/OrgChart';
 import FacultySpotlight from '@/components/faculty/FacultySpotlight';
+import FacultyGrid from '@/components/faculty/FacultyGrid';
 
 const FacultyPage = () => {
   return (
@@ -74,6 +75,9 @@ const FacultyPage = () => {
       <div className="w-full">
         <FacultySpotlight />
       </div>
+
+      {/* Faculty Grid */}
+      <FacultyGrid />
     </MainLayout>
   );
 };
