@@ -18,159 +18,160 @@ interface SearchOverlayProps {
   onClose: () => void;
 }
 
+// Move searchData outside the component to prevent recreation on each render
+const searchData: SearchResult[] = [
+  {
+    title: 'Home',
+    description: 'Welcome to Holy Family Higher Secondary School',
+    link: '/',
+    category: 'Main',
+    keywords: [
+      'home', 'homepage', 'main', 'welcome', 'holy family',
+      'school', 'about', 'overview', 'introduction',
+      'holy family school', 'holy family higher secondary school'
+    ]
+  },
+  {
+    title: 'About Us',
+    description: 'Learn about our history, mission, vision and values',
+    link: '/about',
+    category: 'About',
+    keywords: [
+      'about', 'history', 'mission', 'vision', 'values',
+      'about us', 'school history', 'background', 'heritage',
+      'achievements', 'recognition', 'awards', 'accreditation',
+      'infrastructure', 'facilities', 'campus'
+    ]
+  },
+  {
+    title: 'Admissions',
+    description: 'Learn about admission process, fees, scholarships and requirements',
+    link: '/admissions',
+    category: 'Admissions',
+    keywords: [
+      'admission', 'admissions', 'apply', 'enroll', 'registration', 
+      'fee', 'fees', 'payment', 'tuition', 'cost', 'pay',
+      'scholarship', 'financial aid', 'discount', 'concession',
+      'requirements', 'documents', 'form', 'admission form',
+      'new admission', 'school admission', 'admission fee',
+      'admission process', 'how to apply', 'admission criteria',
+      'school fees', 'monthly fees', 'annual fees', 'prospectus'
+    ]
+  },
+  {
+    title: 'Academics',
+    description: 'Explore our academic programs, curriculum and learning approach',
+    link: '/academics',
+    category: 'Academics',
+    keywords: [
+      'academic', 'study', 'course', 'program', 'programmes',
+      'subject', 'class', 'grade', 'curriculum', 'standard',
+      'syllabus', 'education', 'learning', 'study',
+      'primary', 'secondary', 'higher secondary', 'class',
+      'stream', 'science', 'arts', 'commerce', 'subjects',
+      'school timing', 'class timing', 'periods',
+      'teaching', 'learning', 'study material', 'books',
+      'academic programs', 'courses offered', 'subjects offered'
+    ]
+  },
+  {
+    title: 'Faculty',
+    description: 'Meet our experienced teachers and staff members',
+    link: '/faculty',
+    category: 'Faculty',
+    keywords: [
+      'faculty', 'teacher', 'teachers', 'staff', 'professor',
+      'instructor', 'admin', 'administration', 'teaching',
+      'principal', 'director', 'department', 'head',
+      'teaching staff', 'school staff', 'management',
+      'faculty members', 'school teachers', 'educators',
+      'teaching faculty', 'academic staff', 'school administration',
+      'department heads', 'coordinators', 'mentors'
+    ]
+  },
+  {
+    title: 'Photo Gallery',
+    description: 'View photos of our school events, activities and campus',
+    link: '/gallery',
+    category: 'Gallery',
+    keywords: [
+      'gallery', 'photos', 'images', 'pictures', 'photographs',
+      'school photos', 'event photos', 'campus photos',
+      'activity photos', 'memories', 'school events',
+      'photo gallery', 'image gallery', 'school gallery',
+      'campus tour', 'virtual tour', 'school campus'
+    ]
+  },
+  {
+    title: 'News & Events',
+    description: 'Stay updated with latest news, events and announcements',
+    link: '/news',
+    category: 'News',
+    keywords: [
+      'news', 'events', 'announcements', 'updates', 'latest',
+      'school news', 'recent events', 'upcoming events',
+      'notifications', 'circular', 'notice', 'bulletin',
+      'newsletter', 'school events', 'important announcements',
+      'news updates', 'school updates', 'whats new'
+    ]
+  },
+  {
+    title: 'Calendar',
+    description: 'View academic calendar, events and important dates',
+    link: '/calendar',
+    category: 'Calendar',
+    keywords: [
+      'calendar', 'event', 'date', 'schedule', 'timing',
+      'holiday', 'holidays', 'exam', 'exams', 'examination',
+      'vacation', 'term', 'academic year', 'timetable',
+      'upcoming events', 'school events', 'annual day',
+      'sports day', 'school timing', 'class schedule',
+      'exam schedule', 'exam timetable', 'holiday list',
+      'academic calendar', 'event calendar', 'important dates'
+    ]
+  },
+  {
+    title: 'Student Life',
+    description: 'Discover student activities, clubs, and resources',
+    link: '/student-life',
+    category: 'Student Life',
+    keywords: [
+      'student', 'activity', 'activities', 'club', 'clubs',
+      'resource', 'library', 'sports', 'games', 'competition',
+      'extracurricular', 'cultural', 'events', 'facilities',
+      'student council', 'house system', 'school life',
+      'student facilities', 'playground', 'laboratory',
+      'computer lab', 'science lab', 'library', 'canteen',
+      'sports facilities', 'auditorium', 'smart class',
+      'student clubs', 'student organizations', 'student activities'
+    ]
+  },
+  {
+    title: 'Contact Us',
+    description: 'Get in touch with us and find our location',
+    link: '/contact',
+    category: 'Contact',
+    keywords: [
+      'contact', 'phone', 'telephone', 'email', 'address',
+      'location', 'map', 'direction', 'reach', 'route',
+      'enquiry', 'information', 'visit', 'contact us',
+      'appointment', 'office', 'contact number',
+      'school address', 'phone number', 'email address',
+      'how to reach', 'school location', 'enquiry',
+      'get in touch', 'contact details', 'reach us'
+    ]
+  }
+];
+
 const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [results, setResults] = useState<SearchResult[]>([]);
   const [isLoading, setIsLoading] = useState(false);
 
-  const searchData: SearchResult[] = [
-    {
-      title: 'Home',
-      description: 'Welcome to Holy Family Higher Secondary School',
-      link: '/',
-      category: 'Main',
-      keywords: [
-        'home', 'homepage', 'main', 'welcome', 'holy family',
-        'school', 'about', 'overview', 'introduction',
-        'holy family school', 'holy family higher secondary school'
-      ]
-    },
-    {
-      title: 'About Us',
-      description: 'Learn about our history, mission, vision and values',
-      link: '/about',
-      category: 'About',
-      keywords: [
-        'about', 'history', 'mission', 'vision', 'values',
-        'about us', 'school history', 'background', 'heritage',
-        'achievements', 'recognition', 'awards', 'accreditation',
-        'infrastructure', 'facilities', 'campus'
-      ]
-    },
-    {
-      title: 'Admissions',
-      description: 'Learn about admission process, fees, scholarships and requirements',
-      link: '/admissions',
-      category: 'Admissions',
-      keywords: [
-        'admission', 'admissions', 'apply', 'enroll', 'registration', 
-        'fee', 'fees', 'payment', 'tuition', 'cost', 'pay',
-        'scholarship', 'financial aid', 'discount', 'concession',
-        'requirements', 'documents', 'form', 'admission form',
-        'new admission', 'school admission', 'admission fee',
-        'admission process', 'how to apply', 'admission criteria',
-        'school fees', 'monthly fees', 'annual fees', 'prospectus'
-      ]
-    },
-    {
-      title: 'Academics',
-      description: 'Explore our academic programs, curriculum and learning approach',
-      link: '/academics',
-      category: 'Academics',
-      keywords: [
-        'academic', 'study', 'course', 'program', 'programmes',
-        'subject', 'class', 'grade', 'curriculum', 'standard',
-        'syllabus', 'education', 'learning', 'study',
-        'primary', 'secondary', 'higher secondary', 'class',
-        'stream', 'science', 'arts', 'commerce', 'subjects',
-        'school timing', 'class timing', 'periods',
-        'teaching', 'learning', 'study material', 'books',
-        'academic programs', 'courses offered', 'subjects offered'
-      ]
-    },
-    {
-      title: 'Faculty',
-      description: 'Meet our experienced teachers and staff members',
-      link: '/faculty',
-      category: 'Faculty',
-      keywords: [
-        'faculty', 'teacher', 'teachers', 'staff', 'professor',
-        'instructor', 'admin', 'administration', 'teaching',
-        'principal', 'director', 'department', 'head',
-        'teaching staff', 'school staff', 'management',
-        'faculty members', 'school teachers', 'educators',
-        'teaching faculty', 'academic staff', 'school administration',
-        'department heads', 'coordinators', 'mentors'
-      ]
-    },
-    {
-      title: 'Photo Gallery',
-      description: 'View photos of our school events, activities and campus',
-      link: '/gallery',
-      category: 'Gallery',
-      keywords: [
-        'gallery', 'photos', 'images', 'pictures', 'photographs',
-        'school photos', 'event photos', 'campus photos',
-        'activity photos', 'memories', 'school events',
-        'photo gallery', 'image gallery', 'school gallery',
-        'campus tour', 'virtual tour', 'school campus'
-      ]
-    },
-    {
-      title: 'News & Events',
-      description: 'Stay updated with latest news, events and announcements',
-      link: '/news',
-      category: 'News',
-      keywords: [
-        'news', 'events', 'announcements', 'updates', 'latest',
-        'school news', 'recent events', 'upcoming events',
-        'notifications', 'circular', 'notice', 'bulletin',
-        'newsletter', 'school events', 'important announcements',
-        'news updates', 'school updates', 'whats new'
-      ]
-    },
-    {
-      title: 'Calendar',
-      description: 'View academic calendar, events and important dates',
-      link: '/calendar',
-      category: 'Calendar',
-      keywords: [
-        'calendar', 'event', 'date', 'schedule', 'timing',
-        'holiday', 'holidays', 'exam', 'exams', 'examination',
-        'vacation', 'term', 'academic year', 'timetable',
-        'upcoming events', 'school events', 'annual day',
-        'sports day', 'school timing', 'class schedule',
-        'exam schedule', 'exam timetable', 'holiday list',
-        'academic calendar', 'event calendar', 'important dates'
-      ]
-    },
-    {
-      title: 'Student Life',
-      description: 'Discover student activities, clubs, and resources',
-      link: '/student-life',
-      category: 'Student Life',
-      keywords: [
-        'student', 'activity', 'activities', 'club', 'clubs',
-        'resource', 'library', 'sports', 'games', 'competition',
-        'extracurricular', 'cultural', 'events', 'facilities',
-        'student council', 'house system', 'school life',
-        'student facilities', 'playground', 'laboratory',
-        'computer lab', 'science lab', 'library', 'canteen',
-        'sports facilities', 'auditorium', 'smart class',
-        'student clubs', 'student organizations', 'student activities'
-      ]
-    },
-    {
-      title: 'Contact Us',
-      description: 'Get in touch with us and find our location',
-      link: '/contact',
-      category: 'Contact',
-      keywords: [
-        'contact', 'phone', 'telephone', 'email', 'address',
-        'location', 'map', 'direction', 'reach', 'route',
-        'enquiry', 'information', 'visit', 'contact us',
-        'appointment', 'office', 'contact number',
-        'school address', 'phone number', 'email address',
-        'how to reach', 'school location', 'enquiry',
-        'get in touch', 'contact details', 'reach us'
-      ]
-    }
-  ];
-
-  const handleSearch = useCallback(() => {
+  const handleSearch = useCallback((query: string) => {
     setIsLoading(true);
     setTimeout(() => {
-      const searchTerms = searchQuery.toLowerCase().split(' ');
+      const searchTerms = query.toLowerCase().split(' ');
       const filtered = searchData.filter(item => {
         const itemText = `${item.title} ${item.description} ${item.category} ${item.keywords.join(' ')}`.toLowerCase();
         return searchTerms.every(term => itemText.includes(term));
@@ -178,11 +179,11 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
       setResults(filtered);
       setIsLoading(false);
     }, 300);
-  }, [searchQuery, searchData]);
+  }, []); // Remove searchData from dependencies since it's now outside the component
 
   useEffect(() => {
     if (searchQuery) {
-      handleSearch();
+      handleSearch(searchQuery);
     } else {
       setResults([]);
     }
