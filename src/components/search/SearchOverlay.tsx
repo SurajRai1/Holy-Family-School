@@ -173,13 +173,12 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
       const searchTerms = searchQuery.toLowerCase().split(' ');
       const filtered = searchData.filter(item => {
         const itemText = `${item.title} ${item.description} ${item.category} ${item.keywords.join(' ')}`.toLowerCase();
-        // Check if ALL search terms are found in the item
         return searchTerms.every(term => itemText.includes(term));
       });
       setResults(filtered);
       setIsLoading(false);
     }, 300);
-  }, [searchQuery]);
+  }, [searchQuery, searchData]);
 
   useEffect(() => {
     if (searchQuery) {
@@ -252,7 +251,7 @@ const SearchOverlay: React.FC<SearchOverlayProps> = ({ isOpen, onClose }) => {
                 </div>
               ) : searchQuery && results.length === 0 ? (
                 <div className="p-8 text-center text-gray-500">
-                  <p className="text-lg">No results found for "{searchQuery}"</p>
+                  <p className="text-lg">No results found for &ldquo;{searchQuery}&rdquo;</p>
                   <p className="mt-2">Try searching for something else</p>
                 </div>
               ) : (

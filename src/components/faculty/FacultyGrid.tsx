@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlus } from 'react-icons/fa';
 import Image from 'next/image';
-import { facultyData, type FacultyMember } from '../../utils/facultyData';
+import { facultyData } from '../../utils/facultyData';
 
 const FacultyGrid: React.FC = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
